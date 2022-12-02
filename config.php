@@ -1,6 +1,6 @@
 <?php
 $host = '140.238.200.21';
 $database = 'ecommerce';
-$username = 'phpuser';
+$username = 'admin';
 $password = 'CartIt#123';
 ?>

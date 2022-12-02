@@ -24,6 +24,7 @@ if ($result = $mysqli -> query("SELECT ID, STATUS FROM performance_schema.rpd_no
         }
       }
 
+
       if($hwstatus == "Yes"){
         ?>
         <script type="text/javascript">

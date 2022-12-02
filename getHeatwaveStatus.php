@@ -26,7 +26,7 @@ if ($result = $mysqli -> query("SELECT ID, STATUS FROM performance_schema.rpd_no
         ?>
         <script type="text/javascript">
            document.getElementById("hwstatus").innerHTML = "Yes";
-           document.getElementById("toggleHW").innerHTML = "Heatwave is Enabled <button onclick="toggleHW('off')" type="button" class="btn btn-success btn-lg" id="HW" value="1">HW Enabled</button>";
+           document.getElementById("toggleHW").innerHTML = "Heatwave is Enabled <button  type='button' onclick=toggleHW('off') class='btn btn-success btn-lg' id='HW' value='1'>HW Enabled</button>";
               
         </script>
        <?php
@@ -34,7 +34,7 @@ if ($result = $mysqli -> query("SELECT ID, STATUS FROM performance_schema.rpd_no
         ?>
           <script type="text/javascript">
            document.getElementById("hwstatus").innerHTML = "No";
-           document.getElementById("toggleHW").innerHTML = "Heatwave is Disabled <button onclick="toggleHW('on')" type="button" class="btn btn-success btn-lg" id="HW" value="1">HW Enabled</button>";
+           document.getElementById("toggleHW").innerHTML = "Heatwave is Disabled <button type='button' onclick=toggleHW('on') class='btn btn-success btn-lg' id='HW' value='1'>HW Enabled</button>";
              
           </script>
          <?php

@@ -12,7 +12,7 @@ include('../config.php');
 
 $completed = 0;
 $total = 1000000;
-$batch_size = 25000;
+$batch_size = 1000;
 $sql_values_begin = "('US', 1, '";
 $sql_values_end = "', 1, 1, 'manual product', 'manual', 5, 1, 1, 'Y', 'N', 'Manual review', 'Dummy', '2015-01-01')";
 $dbconn = new mysqli($host,$username,$password,$database);
@@ -48,7 +48,7 @@ do {
   }
   // echo $sql . "<br>";
   $completed += $batch_size;
-  $progress = $completed*100/$total;
+  $progress = $completed*$batch_size/$total;
   $_SESSION['progress'] = $progress;
   session_write_close();
   // echo "Completed number: $completed <br>";
