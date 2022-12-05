@@ -27,7 +27,7 @@
 <style>
 .column {
   float: left;
-  width: 50%;
+  width: 100%;
   padding: 5px;
 }
 
@@ -43,6 +43,12 @@
   margin-left: auto;
   margin-right: auto;
   width: 25%;
+}
+
+.resizeable {
+  resize: both;
+  overflow: auto;
+  border: 2px solid black;
 }
 </style>
 </head>
@@ -172,7 +178,7 @@
                 }
         </script>
 </div>
-  <div class="column">
+  <div class="column" style="border-left-style:solid;">
   <div class="container-fluid">
          <div class="row mt-4">
             <div class="col-md-10 productPageTitleClass" id="productPageTitle">
@@ -237,17 +243,13 @@
          	type: "GET",
          	url: "toggleHW.php",
          	success: function(result) {
-              
-
+                $("#productPageTitle").html(result);
+                    $("#productPageTitle").html(result.html).removeClass("blurText");
                
          	}
          });
 
-         if(type == "on"){
-                   document.getElementById("toggleHW").innerHTML = 'Heatwave is Enabled <button onclick=toggleHW("off") type="button" class="btn btn-warning btn-lg" id="HW" value="1">HW Disable</button>';
-               } else {
-                  document.getElementById("toggleHW").innerHTML = 'Heatwave is Disabled <button onclick=toggleHW("on") type="button" class="btn btn-success btn-lg" id="HW" value="1">HW Enable</button>';
-             }
+        
  }
 
          $.ajax({
