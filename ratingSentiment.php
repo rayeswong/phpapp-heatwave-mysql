@@ -9,12 +9,12 @@ if ($mysqli -> connect_errno) {
   exit();
 }
 
-echo "Connected to MySQL: " ;
+// echo "Connected to MySQL: " ;
 
 $mysqli->query('set profiling=1');
 
 // Perform query
-if ($result = $mysqli -> query("SELECT year(review_date) yearReview, month(review_date) monthReview, SUM(if(star_rating = 1, 1, 0)) 1_stars, SUM(if(star_rating = 2, 1, 0)) 2_stars, SUM(if(star_rating = 3, 1, 0)) 3_stars, SUM(if(star_rating = 4, 1, 0)) 4_stars, SUM(if(star_rating = 5, 1, 0)) 5_stars FROM reviews WHERE product_category = (SELECT product_category FROM reviews WHERE product_id = 'B008TQ16OG' LIMIT 1) GROUP BY YEAR(review_date), MONTH(review_date) ORDER BY YEAR(review_date), MONTH(review_date)")) {
+if ($result = $mysqli -> query("SELECT year(review_date) yearReview, month(review_date) monthReview, SUM(if(star_rating = 1, 1, 0)) 1_stars, SUM(if(star_rating = 2, 1, 0)) 2_stars, SUM(if(star_rating = 3, 1, 0)) 3_stars, SUM(if(star_rating = 4, 1, 0)) 4_stars, SUM(if(star_rating = 5, 1, 0)) 5_stars FROM reviews WHERE product_category = (SELECT product_category FROM reviews WHERE product_id = 'B0008G2WAW' LIMIT 1) GROUP BY YEAR(review_date), MONTH(review_date) ORDER BY YEAR(review_date), MONTH(review_date)")) {
   //echo "Returned rows are: " . $result -> num_rows;
   $array = array();
   $yearReview = array();

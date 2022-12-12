@@ -255,8 +255,11 @@ function refreshwin()
    $.ajax({
          	type: "GET",
          	url: "toggleHW.php",
+             data: { "status": type},
          	success: function(result) {
-               
+                $("#toggleHW").html(result);
+                    $("#toggleHW").html(result.html).removeClass("blurText")
+            
                
          	}
          });
@@ -273,13 +276,14 @@ function refreshwin()
          	}
          });
 
-         $.ajax({
-         	type: "GET",
-         	url: "getHeatwaveStatus.php",
-         	success: function(result) {
+        //  $.ajax({
+        //     type: "GET",
+        //  	url: "toggleHW.php",
+        //      data: { "status": type},
+        //  	success: function(result) {
          	
-         	}
-         });
+        //  	}
+        //  });
          
          $.ajax({
          	type: "GET",
@@ -472,7 +476,7 @@ function refreshwin()
                               <b>Duration</b><br>
                            </td>
                            <td>
-                             <p> <span id='queryDuration'>'queryDuration'</span> seconds (Heatwave: <span id='hwstatus'>'heatwaveStatus'</span>)</p>
+                             <p> <span id='queryDuration'>'queryDuration'</span> seconds (Heatwave: <span id='hwstatus'>'Yes'</span>)</p>
                            </td>
                         </tr>
                         <tr>

@@ -8,7 +8,7 @@ if ($mysqli -> connect_errno) {
 }
 
 // Perform query
-if ($result = $mysqli -> query("SELECT distinct product_title, product_category FROM reviews WHERE product_id = 'B008TQ16OG'")) {
+if ($result = $mysqli -> query("SELECT distinct product_title, product_category FROM reviews WHERE product_id = 'B0008G2WAW'")) {
   // echo "Returned rows are: " . $result -> num_rows;
   if ($result->num_rows > 0)
   {
