@@ -20,6 +20,15 @@ spec:
         image: hwmysql:1.14.2
         ports:
         - containerPort: 80
+        env:
+        - name: HOST
+          value: 140.238.200.21
+        - name: DATABASE
+          value: "ecommerce"
+        - name: USERNAME
+          value: "admin"
+        - name: PASSWORD
+          value: "CartIt#123"
 
 ---
 
