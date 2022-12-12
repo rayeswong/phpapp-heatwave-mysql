@@ -27,7 +27,7 @@
 <style>
 .column {
   float: left;
-  width: 100%;
+  width: 48%;
   padding: 5px;
 }
 
@@ -509,3 +509,4 @@
 
 </body>
 </html>
+         
