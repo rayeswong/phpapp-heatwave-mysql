@@ -180,13 +180,20 @@
 </div>
   <div class="column" style="border-left-style:solid;">
   <div class="container-fluid">
+  <div class="col-md-10 "  id="productPageTitle">
+            </div>
          <div class="row mt-4">
-            <div class="col-md-10 productPageTitleClass" id="productPageTitle">
-            </div>
+           
+            
             <div class="col-md-10" id="debugInfo">
+           
             </div>
-            <div id="toggleHW" class="col-md-2">
-              <button onclick="toggleHW('off')" type="button" class="btn btn-warning btn-lg" id="HW" value="1">HW Disable</button>
+            
+            <div id="toggleHW" class="col-md-6">
+                
+            <button onclick="refreshwin()" type="button" class="btn btn-success btn-lg">Refresh Chart</button>
+            
+            <button onclick="toggleHW('off')" type="button" class="btn btn-warning btn-lg" id="HW" value="1">HW Disable</button>
             </div>
          </div>
          <!--
@@ -238,13 +245,18 @@
       </div>
       <script type="text/javascript">
 
+function refreshwin()
+{ 
+    location.reload();
+    console.log("refreshing window");
+}
+
  function toggleHW(type){
    $.ajax({
          	type: "GET",
          	url: "toggleHW.php",
          	success: function(result) {
-                $("#productPageTitle").html(result);
-                    $("#productPageTitle").html(result.html).removeClass("blurText");
+               
                
          	}
          });
@@ -265,8 +277,7 @@
          	type: "GET",
          	url: "getHeatwaveStatus.php",
          	success: function(result) {
-         		$("#productPageTitle").html(result);
-                    $("#productPageTitle").html(result.html).removeClass("blurText");
+         	
          	}
          });
          
