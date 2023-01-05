@@ -3,11 +3,29 @@
 
 include('config.php');
 $mysqli = new mysqli($host,$username,$password,$database);
+
+// $mysqli = mysqli_init();
+// if (!$mysqli) {
+//     die('mysqli_init failed');
+// }
+
+// $mysqli->ssl_set(
+//     '/path/to/client-key.pem',
+//     '/path/to/client-cert.pem',
+//     '/path/to/ca-cert.pem',
+//     null,
+//     null
+// );
+
+// $mysqli -> real_connect($host, $username, $password, $database);
+
 // Check connection
 if ($mysqli -> connect_errno) {
   echo "Failed to connect to MySQL: " . $mysqli -> connect_error;
   exit();
 }
+
+$mysqli->set_charset("utf8mb4");
 
 // echo "Connected to MySQL: " ;
 

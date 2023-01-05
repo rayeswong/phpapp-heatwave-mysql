@@ -3,7 +3,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: hwmysql-deployment
-  namespace: hwmysql-ns
+  namespace: hwmysql-ns-hw-aws
   labels:
     app: hwmysql
 spec:
@@ -18,14 +18,14 @@ spec:
     spec:
       containers:
       - name: hwmysql
-        image: bom.ocir.io/apaccpt01/php-heatwave-app:1.0.12
+        image: bom.ocir.io/apaccpt01/php-heatwave-app:1.0.9
         ports:
         - containerPort: 80
         env:
         - name: HOST
-          value: 140.238.166.219
+          value: d8fcea22-b8df-4577-a12f-11702ff7009b.dbsystem.us-east-1.aws.cloud.mysql.com
         - name: DATABASE
-          value: "minireviews"
+          value: "ecommerce"
         - name: USERNAME
           value: "admin"
         - name: PASSWORD
@@ -37,7 +37,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: hwmysql-service
-  namespace: hwmysql-ns
+  namespace: hwmysql-ns-hw-aws
 spec:
   type: LoadBalancer
   selector:

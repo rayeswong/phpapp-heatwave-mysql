@@ -284,7 +284,7 @@
    
       </script>
       <div class="footer">
-         MySQL Database Service (MDS) & Heatwave demo by Ronen Baram 2022
+         MySQL Database Service (MDS) & Heatwave demo
       </div>
 
 
@@ -312,7 +312,7 @@
                               <b>Duration</b><br>
                            </td>
                            <td>
-                             <p> <span id='queryDuration'>'queryDuration'</span> seconds (Heatwave: <span id='hwstatus'>'heatwaveStatus'</span>)</p>
+                             <p> <span id='queryDuration'>'queryDuration'</span> seconds (Heatwave: <span id='hwstatus'>No</span>)</p>
                            </td>
                         </tr>
                         <tr>
@@ -336,7 +336,7 @@
                               <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color = "maroon">(</font>
                               <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color = "blue">SELECT</font>&nbsp;<font color = "maroon">product_category</font>
                               <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color = "blue">FROM</font>&nbsp;&nbsp;&nbsp;<font color = "maroon">reviews</font>
-                              <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color = "blue">WHERE</font>&nbsp;&nbsp;<font color = "maroon">product_id</font>&nbsp;<font color = "silver">=</font>&nbsp;<font color = "red">'B00CXSISJW'</font>&nbsp;<font color = "maroon">limit</font>&nbsp;<font color = "black">1</font><font color = "maroon">)</font>
+                              <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color = "blue">WHERE</font>&nbsp;&nbsp;<font color = "maroon">product_id</font>&nbsp;<font color = "silver">=</font>&nbsp;<font color = "red">'B0008G2WAW'</font>&nbsp;<font color = "maroon">limit</font>&nbsp;<font color = "black">1</font><font color = "maroon">)</font>
                               <br/><font color = "blue">GROUP</font>&nbsp;<font color = "blue">BY</font>&nbsp;<font color = "maroon">year</font><font color = "maroon">(</font><font color = "maroon">review_date</font><font color = "maroon">)</font><font color = "silver">,</font>
                               <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color = "maroon">month</font><font color = "maroon">(</font><font color = "maroon">review_date</font><font color = "maroon">)</font>
                               <br/><font color = "blue">ORDER</font>&nbsp;<font color = "blue">BY</font>&nbsp;<font color = "maroon">year</font><font color = "maroon">(</font><font color = "maroon">review_date</font><font color = "maroon">)</font><font color = "silver">,</font>

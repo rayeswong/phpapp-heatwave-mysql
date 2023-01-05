@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="utf-8">
+   <head>
+      <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
       <link rel="icon" type="image/png" href="./img/mysqlIcon.png" />
       <!-- JQuery js and css -->
@@ -24,176 +24,16 @@
       <title>MySQL Heatwave Demo</title>
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
       
-<style>
-.column {
-  float: left;
-  width: 48%;
-  padding: 5px;
-}
-
-/* Clearfix (clear floats) */
-.row::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
-.center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 25%;
-}
-
-.resizeable {
-  resize: both;
-  overflow: auto;
-  border: 2px solid black;
-}
-</style>
-</head>
-<body>
-<div>
-<img src="img/header_logo.png" alt="Paris" class="center">
-</div>
-
-
-
-
-<div class="row">
-  <div class="column" >
-  <div class="container-fluid"  >
-             
-                <div class="row mt-4">
-                        <div class="col-md-12">
-                                <div class="jumbotron jumbotron-fluid">
-                                        <div class="container">
-                                                <h1 class="display-4">Add new product rows</h1>
-                                                <div class="p-3 mb-2 bg-warning text-dark">Currently <b><span id="numberOfRows"></span></b> rows</div>
-                                                <p class="lead">Adding new demo product from the database.</p>
-                                                <hr class="my-4">
-                                                <button id="startInsert" type="button" class="btn btn-success btn-lg" name="startInsert" value="Insert Rows">Add 1,000,000 Rows</button>
-                                                <!-- <button type="button" class="btn btn-success btn-lg" name="action" value="2000">Add 2,000 rows</button>
-                                                <button type="button" class="btn btn-success btn-lg" name="action" value="100000"> Add 100,000 rows</button>
-                                                <button type="button" class="btn btn-success btn-lg" name="action" value="500000"> Add 500,000 rows</button>
-                                                <button type="button" class="btn btn-success btn-lg" name="action" value="1000000"> Add 1,000,000 rows</button>
-                                                <button type="button" class="btn btn-danger btn-lg" name="action" value="-1">Delete ALL</button> -->                                             
-                                        </div>
-                                           
-                                </div>
-                        </div>
-                </div>
-                <div class="row mt-4">
-                        <div class="col-md-12" id="progressBarDiv">
-                            <!-- <div class="progress" style="height: 40px;">
-                                <div class="progress-bar progress-bar-striped progress-bar-animated" id="progressbar" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"><span id="progressBarText">0% Complete</span></div>
-                            </div> -->
-                        </div>                               
-                </div>
-        </div>
-
-        <div class="footer">
-                MySQL Database Service (MDS) & Heatwave demo
-        </div>
-
-        <script type="text/javascript">
-                $(document).ready(function() {
-                        updateNumberOfRows();
-
-                        // $('#startInsert').click(function () {
-                        $("button[name='startInsert']").on('click', function(){
-                            
-                            $("#progressBarDiv").html("\
-                                <div class=\"progress\" style=\"height: 40px;\"> \
-                                    <div class=\"progress-bar progress-bar-striped progress-bar-animated\" role=\"progressbar\" style=\"width: 0%\" id=\"progressbar\"><span id=\"progressBarText\">0% Complete</span> \
-                                    </div> \
-                                </div>");
-
-                            getProgress();
-                            
-                            console.log('startInsert');
-                            $.ajax({
-                                url: "./rh/insert.php",
-                                type: "POST",
-                                data: {
-                                    'rows': '10000'
-                                },
-                                async: true, //IMPORTANT!
-                                contentType: false,
-                                processData: false,
-                                success: function(data){
-                                    if(data!==''){
-                                        alert(data);
-                                    }
-                                    return false;
-                                }
-                            });
-                            
-                            return false;
-                        });
-
-                });
-
-                $("#productPage").on('click', function(){
-                        window.open('productPage.php?productID=29c01a32-&HW=1', '_blank').focus()
-                });
-
-                function updateNumberOfRows(){
-                        $.ajax({
-                                type: "GET",
-                                url: "getTotalNumber.php",
-                                success: function(result) {
-                                        $("#numberOfRows").html(result);
-                                }
-                        });
-                }
-
-                function getProgress() {
-                    console.log('getProgress');
-                    
-                    $.ajax({
-                        url: "./rh/getProgress.php",
-                        type: "GET",
-                        contentType: false,
-                        processData: false,
-                        async: false,
-                        success: function (data) {
-                            console.log(data);
-                            // $('#progressbar').css('width', data+'%').children('.sr-only').html(data+"% Complete");
-                            $('#progressbar').css('width', data+'%');
-                            $("#progressBarText").text(data+'% Completed');
-                            if (parseInt(data)%10 == 0) {
-						        
-					        }
-                            if(data!=='100'){
-                                setTimeout('getProgress()', 200);
-                                // updateNumberOfRows();
-                            } else {
-                                $("#progressbar").removeClass("progress-bar-animated");
-                                updateNumberOfRows();
-                            }
-                            
-                        }
-                    });
-                }
-        </script>
-</div>
-  <div class="column" style="border-left-style:solid;">
-  <div class="container-fluid">
-  <div class="col-md-10 "  id="productPageTitle">
-            </div>
+   </head>
+   <body>
+      <div class="container-fluid">
          <div class="row mt-4">
-           
-            
-            <div class="col-md-10" id="debugInfo">
-           
+            <div class="col-md-10 productPageTitleClass" id="productPageTitle">
+               <h2>rds_mysql_source_db</h2>
+               <h5>Dataset: ecommerce product ratings</h5>
+               <h5>Size: 2,218,487 rows</h5>
             </div>
-            
-            <div id="toggleHW" class="col-md-6">
-                
-            <button onclick="refreshwin()" type="button" class="btn btn-success btn-lg">Refresh Chart</button>
-            
-            <button onclick="toggleHW('off')" type="button" class="btn btn-warning btn-lg" id="HW" value="1">HW Disable</button>
+            <div class="col-md-10" id="debugInfo">
             </div>
          </div>
          <!--
@@ -245,45 +85,36 @@
       </div>
       <script type="text/javascript">
 
-function refreshwin()
-{ 
-    location.reload();
-    console.log("refreshing window");
-}
-
  function toggleHW(type){
    $.ajax({
          	type: "GET",
          	url: "toggleHW.php",
-             data: { "status": type},
          	success: function(result) {
-                $("#toggleHW").html(result);
-                    $("#toggleHW").html(result.html).removeClass("blurText")
-            
+              
+
                
          	}
          });
 
-        
  }
 
-         $.ajax({
-         	type: "GET",
-         	url: "getHeaderInfo.php",
-         	success: function(result) {
-         		$("#productPageTitle").html(result);
-                    $("#productPageTitle").html(result.html).removeClass("blurText");
-         	}
-         });
+         // $.ajax({
+         // 	type: "GET",
+         // 	url: "getHeaderInfo.php",
+         // 	success: function(result) {
+         // 		$("#productPageTitle").html(result);
+         //            $("#productPageTitle").html(result.html).removeClass("blurText");
+         // 	}
+         // });
 
-        //  $.ajax({
-        //     type: "GET",
-        //  	url: "toggleHW.php",
-        //      data: { "status": type},
-        //  	success: function(result) {
-         	
-        //  	}
-        //  });
+         // $.ajax({
+         // 	type: "GET",
+         // 	url: "getHeatwaveStatus.php",
+         // 	success: function(result) {
+         // 		$("#productPageTitle").html(result);
+         //            $("#productPageTitle").html(result.html).removeClass("blurText");
+         // 	}
+         // });
          
          $.ajax({
          	type: "GET",
@@ -476,7 +307,7 @@ function refreshwin()
                               <b>Duration</b><br>
                            </td>
                            <td>
-                             <p> <span id='queryDuration'>'queryDuration'</span> seconds (Heatwave: <span id='hwstatus'>'Yes'</span>)</p>
+                             <p> <span id='queryDuration'>'queryDuration'</span> seconds</p>
                            </td>
                         </tr>
                         <tr>
@@ -518,10 +349,5 @@ function refreshwin()
             </div>
          </div>
       </div>
-      </div>
-
-</div>
-
-</body>
+   </body>
 </html>
-         

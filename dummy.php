@@ -53,7 +53,7 @@
 	</div>
 
 	<div class="footer">
-		MySQL Database Service (MDS) & Heatwave demo by Ronen Baram 2022
+		MySQL Database Service (MDS) & Heatwave demo
 	</div>
 
 	<!-- Modal -->
